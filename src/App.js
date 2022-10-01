@@ -26,7 +26,7 @@ export default function App() {
             rel="noopener noreferrer"
             label="GitHub repository"
           >
-            open-sourced.
+            open-sourced
           </a>{" "}
           on GitHub.
         </footer>
