@@ -11,6 +11,7 @@ export default function App() {
           href="https://www.linkedin.com/in/gabrielacanelas"
           target="_blank"
           rel="noopener noreferrer"
+          label="LinkedIn profile"
         >
           Gabriela Canelas
         </a>{" "}
@@ -20,6 +21,7 @@ export default function App() {
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
+          label="GitHub repository"
         >
           open-sourced.
         </a>
