@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <div className="Weather-app">
+      <h1>Weather App</h1>
+      <footer>
+        This page was built by{" "}
         <a
-          className="App-link"
+          className="Footer-link"
+          href="https://www.linkedin.com/in/gabrielacanelas"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Gabriela Canelas
+        </a>{" "}
+        and is{" "}
+        <a
+          className="Footer-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          open-sourced.
         </a>
-      </header>
+      </footer>
     </div>
   );
 }
-
-export default App;
