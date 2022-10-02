@@ -8,48 +8,12 @@
   background-color: var(--secondary-color);
   font-family: Arial, Helvetica, sans-serif;
 }
-.Weather h1 {
-  margin: 10px 0px 20px;
-
-  font-size: 30px;
-  font-weight: 600;
-}
-.Weather ul {
-  margin: 0;
-  padding: 0;
-}
-.Weather li {
-  list-style-type: none;
-}
-.Weather .weather-icon {
-  margin-right: 10px;
-}
-
-.Weather .current-temperature {
-  font-weight: 400;
-  font-size: 54px;
-  line-height: 54px;
-}
-.Weather .units {
-  position: relative;
-  top: -28px;
-  left: 5px;
-}
-.Weather .temperature-range {
-  margin-top: 10px;
-  color: #70757a;
-  font-size: 14px;
-}
-
 .Weather .search-button {
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   border: none;
   color: white;
 }
 .Weather .search-button:hover {
   background: var(--secondary-color);
   color: var(--primary-color);
-}
-.Weather .weather-description {
-  font-size: 15px;
 }
