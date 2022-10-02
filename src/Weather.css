@@ -10,6 +10,7 @@
 }
 .Weather h1 {
   margin: 10px 0px 20px;
+
   font-size: 30px;
   font-weight: 600;
 }
@@ -46,6 +47,9 @@
   color: white;
 }
 .Weather .search-button:hover {
-  background-color: var(--terciary-color);
+  background: var(--secondary-color);
   color: var(--primary-color);
+}
+.Weather .weather-description {
+  font-size: 15px;
 }

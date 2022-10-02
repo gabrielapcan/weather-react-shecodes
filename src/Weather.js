@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -10,6 +11,7 @@ export default function Weather(props) {
       ready: true,
       displayCity: response.data.name,
       country: response.data.sys.country,
+      date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       minTemp: response.data.main.temp_min,
       maxTemp: response.data.main.temp_max,
@@ -42,13 +44,14 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <h1>
+        <h1 className="mt-3">
           {weatherData.displayCity}
           <small>, {weatherData.country}</small>
         </h1>
+
         <div className="row">
           <div className="col-5">
-            <div className="row">
+            <div className="row mb-4">
               <div className="col-4">
                 <img
                   src={weatherData.icon}
@@ -75,23 +78,21 @@ export default function Weather(props) {
                 </ul>
               </div>
             </div>
-          </div>
-          <div className="col-7">
-            <div className="row">
-              <div className="col-6">
-                <ul>
-                  <li>Monday, 18:00</li>
-                  <li className="text-capitalize">{weatherData.description}</li>
-                </ul>
-              </div>
-              <div className="col-6">
-                <ul>
-                  <li>Humidity: {weatherData.humidity}%</li>
-                  <li>Wind: {Math.round(weatherData.wind)}km/h</li>
-                </ul>
-              </div>
+            <div className="weather-description">
+              <ul className="mt-3">
+                <li>
+                  <FormattedDate dateSend={weatherData.date} />
+                </li>
+                <li className="text-capitalize">{weatherData.description}</li>
+              </ul>
+
+              <ul className="mt-2">
+                <li>Humidity: {weatherData.humidity}%</li>
+                <li>Wind: {Math.round(weatherData.wind)}km/h</li>
+              </ul>
             </div>
           </div>
+          <div className="col-7"></div>
         </div>
       </div>
     );
