@@ -11,9 +11,6 @@
 .Weather-info li {
   list-style-type: none;
 }
-.Weather-info .weather-icon {
-  margin-right: 10px;
-}
 
 .Weather-info .current-temperature {
   font-weight: 400;
