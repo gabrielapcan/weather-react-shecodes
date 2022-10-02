@@ -2,6 +2,7 @@ import React from "react";
 import FormattedDate from "./FormattedDate";
 import "./WeatherInfo.css";
 import Icon from "./Icon";
+import DisplayTemperature from "./DisplayTemperature";
 
 export default function WeatherInfo(props) {
   return (
@@ -18,22 +19,11 @@ export default function WeatherInfo(props) {
               <Icon code={props.data.icon} />
             </div>
             <div className="col-8">
-              <ul>
-                <li>
-                  <span className="current-temperature">
-                    {Math.round(props.data.temperature)}
-                  </span>
-                  <span className="units">ºC</span>
-                </li>
-                <li className="temperature-range">
-                  ({" "}
-                  <span>
-                    {Math.round(props.data.minTemp)}-
-                    {Math.round(props.data.maxTemp)}
-                  </span>
-                  <span>ºC</span> )
-                </li>
-              </ul>
+              <DisplayTemperature
+                temp={props.data.temperature}
+                min={props.data.minTemp}
+                max={props.data.maxTemp}
+              />
             </div>
           </div>
           <div className="weather-description">
