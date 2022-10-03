@@ -1,0 +1,9 @@
+.Weather-forecast {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 14px;
+}
+.Weather-forecast .forecast-min {
+  opacity: 0.6;
+  margin-left: 5px;
+}

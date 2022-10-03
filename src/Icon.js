@@ -38,6 +38,11 @@ export default function Icon(props) {
   let color = colorMapping[icon];
 
   return (
-    <ReactAnimatedWeather icon={icon} color={color} size={50} animate={true} />
+    <ReactAnimatedWeather
+      icon={icon}
+      color={color}
+      size={props.size}
+      animate={true}
+    />
   );
 }
