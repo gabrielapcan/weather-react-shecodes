@@ -12,6 +12,7 @@ export default function Weather(props) {
       ready: true,
       displayCity: response.data.name,
       country: response.data.sys.country,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
       temperature: response.data.main.temp,
       minTemp: response.data.main.temp_min,
