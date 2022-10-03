@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import { ThreeDots } from "react-loader-spinner";
 
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
@@ -37,35 +38,54 @@ export default function Weather(props) {
   function handleCityChange(event) {
     setCity(event.target.value);
   }
+  let form = (
+    <form onSubmit={handleSubmit}>
+      <div className="row">
+        <div className="col-9">
+          <input
+            type="search"
+            placeholder="Enter a city"
+            autoFocus="on"
+            className="form-control"
+            onChange={handleCityChange}
+          />
+        </div>
+        <div className="col-3">
+          <input
+            type="submit"
+            value="Search"
+            className="btn w-100 search-button"
+          />
+        </div>
+      </div>
+    </form>
+  );
 
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form onSubmit={handleSubmit}>
-          <div className="row">
-            <div className="col-9">
-              <input
-                type="search"
-                placeholder="Enter a city"
-                autoFocus="on"
-                className="form-control"
-                onChange={handleCityChange}
-              />
-            </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn w-100 search-button"
-              />
-            </div>
-          </div>
-        </form>
+        {form}
         <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
     search();
-    return "Loading";
+    return (
+      <div className="Weather">
+        {form}
+        <div>
+          <ThreeDots
+            height="40"
+            width="40"
+            radius="9"
+            color="#272343"
+            ariaLabel="three-dots-loading"
+            wrapperStyle={{}}
+            wrapperClassName=""
+            visible={true}
+          />
+        </div>
+      </div>
+    );
   }
 }
