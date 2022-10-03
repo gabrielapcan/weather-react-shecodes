@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import ForecastData from "./ForecastData";
 import "./WeatherForecast.css";
@@ -11,6 +11,9 @@ export default function WeatherForecast(props) {
     setReady(true);
     setForecast(response.data.daily);
   }
+  useEffect(() => {
+    setReady(false);
+  }, [props.coordinates]);
 
   if (ready) {
     return (
