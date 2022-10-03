@@ -1,6 +1,8 @@
+.Weather-info {
+  color: var(--secondary-color);
+}
 .Weather-info h1 {
   margin: 10px 0px 20px;
-
   font-size: 30px;
   font-weight: 600;
 }
@@ -14,4 +16,11 @@
 
 .Weather-info .weather-description {
   font-size: 15px;
+}
+.Weather-info .last-update {
+  font-family: "Space Mono", monospace;
+  font-size: 10px;
+  display: flex;
+  top: -10px;
+  opacity: 0.5;
 }

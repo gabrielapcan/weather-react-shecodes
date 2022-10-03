@@ -8,20 +8,20 @@ export default function App() {
         <Weather defaultCity="Porto" />
 
         <footer>
-          This page was built by{" "}
+          Built by{" "}
           <a
             className="Footer-link"
-            href="https://www.linkedin.com/in/gabrielacanelas"
+            href="https://relaxed-puppy-1f4f1f.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
-            label="LinkedIn profile"
+            label="Personal Website"
           >
             Gabriela Canelas
           </a>{" "}
-          and is{" "}
+          using React and is{" "}
           <a
             className="Footer-link"
-            href="https://reactjs.org"
+            href="https://github.com/gabrielapcan/weather-react-shecodes"
             target="_blank"
             rel="noopener noreferrer"
             label="GitHub repository"
@@ -29,6 +29,35 @@ export default function App() {
             open-sourced
           </a>{" "}
           on GitHub.
+          <p className="social-links">
+            <a
+              className="Footer-link"
+              href="https://github.com/gabrielapcan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              label="GitHub"
+            >
+              <i className="fa-brands fa-github-alt"></i>
+            </a>
+            <a
+              className="Footer-link"
+              href="https://www.linkedin.com/in/gabrielacanelas"
+              target="_blank"
+              rel="noopener noreferrer"
+              label="LinkedIn profile"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              className="Footer-link"
+              href="https://www.instagram.com/gabrielapcan/"
+              target="_blank"
+              rel="noopener noreferrer"
+              label="Instagram profile"
+            >
+              <i class="fa-brands fa-square-instagram"></i>
+            </a>
+          </p>
         </footer>
       </div>
     </div>

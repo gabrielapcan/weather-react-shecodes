@@ -31,11 +31,12 @@ export default function WeatherInfo(props) {
             <ul className="mt-3">
               <li>
                 <FormattedDate dateSend={props.data.date} />
+                <span className="last-update">(last update)</span>
               </li>
-              <li className="text-capitalize">{props.data.description}</li>
             </ul>
 
             <ul className="mt-2">
+              <li className="text-capitalize">{props.data.description}</li>
               <li>Humidity: {props.data.humidity}%</li>
               <li>Wind: {Math.round(props.data.wind)}km/h</li>
             </ul>

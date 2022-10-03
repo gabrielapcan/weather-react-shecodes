@@ -1,4 +1,18 @@
 footer {
   text-align: center;
-  font-size: 12px;
+  font-size: 10px;
+  font-family: "Space Mono", monospace;
+}
+.Footer-link {
+  color: var(--highlight-color);
+}
+.Footer-link:hover {
+  color: var(--secondary-color);
+}
+
+.social-links {
+  font-size: 14px;
+}
+.social-links i {
+  margin: 5px;
 }

@@ -1,4 +1,12 @@
+.forecast-data {
+  padding: 5px;
+}
 .forecast-data .forecast-min {
-  opacity: 0.6;
+  color: var(--highlight-color);
+  opacity: 0.5;
   margin-left: 5px;
+}
+.forecast-data .forecast-max {
+  color: var(--highlight-color);
+  font-weight: bold;
 }
