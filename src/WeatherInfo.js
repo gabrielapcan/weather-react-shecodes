@@ -14,7 +14,7 @@ export default function WeatherInfo(props) {
       </h1>
 
       <div className="row">
-        <div className="col-5">
+        <div className="col-sm-5">
           <div className="row mb-4">
             <div className="col-4">
               <Icon code={props.data.icon} size={50} />
@@ -34,15 +34,16 @@ export default function WeatherInfo(props) {
                 <span className="last-update">(last update)</span>
               </li>
             </ul>
-
             <ul className="mt-2">
               <li className="text-capitalize">{props.data.description}</li>
+            </ul>
+            <ul>
               <li>Humidity: {props.data.humidity}%</li>
               <li>Wind: {Math.round(props.data.wind)}km/h</li>
             </ul>
           </div>
         </div>
-        <div className="col-7">
+        <div className="col-sm-7">
           <WeatherForecast coordinates={props.data.coordinates} />
         </div>
       </div>
