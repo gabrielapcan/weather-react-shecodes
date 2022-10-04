@@ -46,7 +46,7 @@ export default function App() {
               rel="noopener noreferrer"
               label="LinkedIn profile"
             >
-              <i class="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
               className="Footer-link"
@@ -55,7 +55,7 @@ export default function App() {
               rel="noopener noreferrer"
               label="Instagram profile"
             >
-              <i class="fa-brands fa-square-instagram"></i>
+              <i className="fa-brands fa-square-instagram"></i>
             </a>
           </p>
         </footer>

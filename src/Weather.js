@@ -7,6 +7,8 @@ import { ThreeDots } from "react-loader-spinner";
 export default function Weather(props) {
   let [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.defaultCity);
+  let apiKey = "8d1684c8dfd4c7c9e701ecf0706e6732";
+  let units = "metric";
 
   function handleResponse(response) {
     setWeatherData({
@@ -25,11 +27,18 @@ export default function Weather(props) {
     });
   }
   function search() {
-    let apiKey = "8d1684c8dfd4c7c9e701ecf0706e6732";
-    let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(handleResponse);
   }
+
+  function handleCurrentLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(function (position) {
+      let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=${units}&appid=${apiKey}`;
+      axios.get(apiUrl).then(handleResponse);
+    });
+  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
@@ -41,7 +50,7 @@ export default function Weather(props) {
   let form = (
     <form onSubmit={handleSubmit}>
       <div className="row">
-        <div className="col-sm-9 mt-2">
+        <div className="col-sm-7 mt-2">
           <input
             type="search"
             placeholder="Enter a city..."
@@ -52,6 +61,16 @@ export default function Weather(props) {
         </div>
         <div className="col-sm-3 mt-2">
           <input type="submit" value="Search" className="w-100 search-button" />
+        </div>
+        <div className=" col-sm-2 mt-2">
+          <a
+            href="/"
+            label="current location search button"
+            rel="noopener no referrer"
+            onClick={handleCurrentLocation}
+          >
+            <i className="fa-solid fa-map-location-dot location-icon"></i>
+          </a>
         </div>
       </div>
     </form>
