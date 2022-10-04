@@ -24,3 +24,10 @@
   top: -10px;
   opacity: 0.5;
 }
+.Weather-info .temperature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0px;
+  padding: 0px;
+}
